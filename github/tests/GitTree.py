@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -47,3 +48,6 @@ class GitTree(Framework.TestCase):
         self.assertEqual(self.tree.tree[6].type, "tree")
         self.assertEqual(self.tree.tree[6].url, "https://api.github.com/repos/jacquev6/PyGithub/git/trees/60b4602b2c2070246c5df078fb7a5150b45815eb")
         self.assertEqual(self.tree.url, "https://api.github.com/repos/jacquev6/PyGithub/git/trees/f492784d8ca837779650d1fb406a1a3587a764ad")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.tree.__repr__(), 'GitTree(sha="f492784d8ca837779650d1fb406a1a3587a764ad")')

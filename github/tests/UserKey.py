@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -37,6 +38,9 @@ class UserKey(Framework.TestCase):
         self.assertEqual(self.key.title, "Key added through PyGithub")
         self.assertEqual(self.key.url, "https://api.github.com/user/keys/2626650")
         self.assertTrue(self.key.verified)
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.key.__repr__(), 'UserKey(title="Key added through PyGithub", id=2626650)')
 
     def testEditWithoutArguments(self):
         self.key.edit()

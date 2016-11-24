@@ -4,10 +4,99 @@ Change log
 Stable versions
 ~~~~~~~~~~~~~~~
 
+Version 1.29 (October 10, 2016)
+-----------------------------------
+
+* add issue assignee param (3a8edc7)
+* Fix diffrerent case (fcf6cfb)
+* DOC: remove easy_install suggestion; update links (45e76d9)
+* Add permission param documentation (9347345)
+* Add ability to set permission for team repo (5dddea7)
+* Fix status check (073bb44)
+* adds support for content dirs (0799753)
+
+Version 1.28 (September 09, 2016)
+-----------------------------------
+
+* test against python 3.5 (5d35284)
+* sort params and make them work on py3 (78374b9)
+* adds a nicer __repr__ (8571d87)
+* Add missing space (464259d)
+* Properly handle HTTP Proxy authentication with Python 3 (d015154)
+* Fix small typo (987bca0)
+* push to 'origin' instead of 'github' (d640666)
+
+Version 1.27.1 (August 12, 2016)
+-----------------------------------
+
+* upgrade release process based on travis (3c20a66)
+* change file content encoding to support unicode(like chinese), py2 (5404030)
+* adds missing testfile corrections (9134aa2)
+* fixed file API return values (0f29a53)
+* assert by str and unicode to make it more py3 friendly (7390827)
+* Patch issue 358 status context (#428) (70e30c5)
+* Adding "since" param to Issue.get_comments() (#426) (3c6f99f)
+* update doc url everywhere (#420) (cb0cf0a)
+* fix a couple typos to be clearer (#419) (23c0e75)
+* Document how one gets an AuthenticatedUser object (ba66862)
+* fix wrong expectance on requestJsonAndCheck() returning {} if no data (8985368)
+* Add previous_filename property to File (e1be1e6)
+* add changelog entry for 1.26.0 (a1f3de2)
+* update project files (be2e98b)
+* fix update/create/delete file api return value issue (8bb765a)
+* fix typo (a7929ac)
+* fix update/delete/create content return value invalid issue (a0a4511)
+* Follow redirects in the case of a 301 status code (c29f533)
+* Fix for pickling exception when deserializing GithubException. (8f8b455)
+* add support for the head parameter in Repository.get_pulls (397a74d)
+* Add:   - CommitCombinedStatus class   - get_combined_status() to Commit class to return combined status   - Add test for combined status. (5823ed7)
+* fix python3 compatibility issue for using json/base64 (5b7f0bb)
+* remove not covered API from readme (9c6f881)
+* change replay data for update file test case (46895df)
+* fix python3 compatability error in test case (00777db)
+* Add repo content create/update/delete testcase (4aaeb9e)
+* add MAINTAINERS file (a16b55b)
+* travis: disable email (6347157)
+* fix protect branch tests (65360b0)
+* Add branch protection endpoint (737f0c3)
+* fix request parameters issue (ae37d44)
+* add content file create/update/delete api (b83ffbf)
+* Add travis button on README. (a83649b)
+* fix misspelling: https://github.com/PyGithub/PyGithub/issues/363 (a06b5ec)
+* Adding base parameter to get_pulls() method. (71593a8)
+* add support for the direction parameter in Repository.get_pulls (70bcb6d)
+* added creator parameter (ca9af4f)
+
+Version 1.27.0 (August 12, 2016)
+-----------------------------------
+
+* this version was never released to PyPi due to a problem with the deployment
+
+Version 1.26.0 (November 5th, 2015)
+-----------------------------------
+
+* Added context parameter to Status API
+* Changed InputGitAuthor to reflect that time is an optional parameter
+* Added sort option to get_pulls
+* Added api_preview parameter to Requester class
+* Return empty list instead of None for pagination with no pages
+* Removed URL scheme validation that broke GitHub Enterprise
+* Added "add_membership" call to Teams
+* Added support to lazily load repositories
+* Updated test suite to record with oauth tokens
+* Added support for http_proxy
+* Add support for filter/role options in Organization.get_members()
+* Changed Organization.get_members's filter parameter to _filter
+* Fix escaping so that labels now support whitespaces
+* Updated create_issue to support taking a list of strings for labels
+* Added support for long integers in get_repo
+* Fixed pagination to thread headers between requests
+* Added repo.get_stargazers_with_dates()
+
 Version 1.25.2 (October 7th, 2014)
 ----------------------------------
 
-* `Work around <https://github.com/jacquev6/PyGithub/issues/278>`__ the GitHub API v3 returning `null`s in some paginated responses, `erichaase <https://github.com/erichaase>`__ for the bug report
+* `Work around <https://github.com/jacquev6/PyGithub/issues/278>`__ the GitHub API v3 returning `null`\s in some paginated responses, `erichaase <https://github.com/erichaase>`__ for the bug report
 
 Version 1.25.1 (September 28th, 2014)
 -------------------------------------

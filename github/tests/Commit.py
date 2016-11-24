@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -53,6 +54,9 @@ class Commit(Framework.TestCase):
         self.assertEqual(self.commit.stats.additions, 0)
         self.assertEqual(self.commit.stats.total, 20)
         self.assertEqual(self.commit.url, "https://api.github.com/repos/jacquev6/PyGithub/commits/1292bf0e22c796e91cc3d6e24b544aece8c21f2a")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.commit.__repr__(), 'Commit(sha="1292bf0e22c796e91cc3d6e24b544aece8c21f2a")')
 
     def testGetComments(self):
         self.assertListKeyEqual(self.commit.get_comments(), lambda c: c.id, [1347033, 1347083, 1347397, 1349654])

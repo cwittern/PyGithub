@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -35,6 +36,9 @@ class Label(Framework.TestCase):
         self.assertEqual(self.label.color, "e10c02")
         self.assertEqual(self.label.name, "Bug")
         self.assertEqual(self.label.url, "https://api.github.com/repos/jacquev6/PyGithub/labels/Bug")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.label.__repr__(), 'Label(name="Bug")')
 
     def testEdit(self):
         self.label.edit("LabelEditedByPyGithub", "0000ff")

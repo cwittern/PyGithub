@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -39,3 +40,7 @@ class GitBlob(Framework.TestCase):
         self.assertEqual(self.blob.size, 1295)
         self.assertEqual(self.blob.sha, "53bce9fa919b4544e67275089b3ec5b44be20667")
         self.assertEqual(self.blob.url, "https://api.github.com/repos/jacquev6/PyGithub/git/blobs/53bce9fa919b4544e67275089b3ec5b44be20667")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.blob.__repr__(),
+                         'GitBlob(sha="53bce9fa919b4544e67275089b3ec5b44be20667")')

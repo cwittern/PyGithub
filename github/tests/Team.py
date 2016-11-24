@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -40,6 +41,9 @@ class Team(Framework.TestCase):
         self.assertEqual(self.team.repos_count, 0)
         self.assertEqual(self.team.url, "https://api.github.com/teams/189850")
 
+        # test __repr__() based on this attributes
+        self.assertEqual(self.team.__repr__(), 'Team(name="Team created by PyGithub", id=189850)')
+
     def testMembers(self):
         user = self.g.get_user("jacquev6")
         self.assertListKeyEqual(self.team.get_members(), None, [])
@@ -50,6 +54,10 @@ class Team(Framework.TestCase):
         self.team.remove_from_members(user)
         self.assertListKeyEqual(self.team.get_members(), None, [])
         self.assertFalse(self.team.has_in_members(user))
+
+    def testRepoPermission(self):
+        repo = self.org.get_repo("FatherBeaver")
+        self.team.set_repo_permission(repo, "admin")
 
     def testRepos(self):
         repo = self.org.get_repo("FatherBeaver")

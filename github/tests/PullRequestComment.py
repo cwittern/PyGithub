@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -46,6 +47,10 @@ class PullRequestComment(Framework.TestCase):
         self.assertEqual(self.comment.url, "https://api.github.com/repos/jacquev6/PyGithub/pulls/comments/886298")
         self.assertEqual(self.comment.user.login, "jacquev6")
         self.assertEqual(self.comment.html_url, "https://github.com/jacquev6/PyGithub/pull/170#issuecomment-18637907")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.comment.__repr__(), 'PullRequestComment(user=NamedUser(login="jacquev6"), id=886298)')
+
 
     def testEdit(self):
         self.comment.edit("Comment edited by PyGithub")

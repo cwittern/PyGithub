@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -45,6 +46,9 @@ class Hook(Framework.TestCase):
         self.assertEqual(self.hook.name, "web")
         self.assertEqual(self.hook.updated_at, datetime.datetime(2012, 5, 29, 18, 49, 47))
         self.assertEqual(self.hook.url, "https://api.github.com/repos/jacquev6/PyGithub/hooks/257993")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.hook.__repr__(), 'Hook(url="https://api.github.com/repos/jacquev6/PyGithub/hooks/257993", id=257993)')
 
     def testEditWithMinimalParameters(self):
         self.hook.edit("web", {"url": "http://foobar.com/hook"})

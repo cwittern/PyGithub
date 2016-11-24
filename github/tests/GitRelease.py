@@ -4,7 +4,8 @@
 #                                                                              #
 # Copyright 2015 Ed Holland <eholland@alertlogic.com>                          #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -38,6 +39,11 @@ class Release(Framework.TestCase):
         self.assertEqual(self.release.title, "Test")
         self.assertEqual(self.release.url, "https://api.github.com/repos/edhollandAL/PyGithub/releases/1210814")
         self.assertEqual(self.release.author._rawData['login'], "edhollandAL")
+        self.assertEqual(self.release.html_url, "https://github.com/edhollandAL/PyGithub/releases/tag/v1.25.2")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.release.__repr__(), 'GitRelease(title="Test")')
+
 
     def testDelete(self):
         self.release = self.g.get_user().get_repo("PyGithub").get_releases()[0]
@@ -61,3 +67,4 @@ class Release(Framework.TestCase):
         self.assertEqual(self.release.body, "release message")
         self.assertEqual(self.release.title, "release title")
         self.assertEqual(self.release.author._rawData['login'], "edhollandAL")
+        self.assertEqual(self.release.html_url, "https://github.com/edhollandAL/PyGithub/releases/tag/v3.0.0")

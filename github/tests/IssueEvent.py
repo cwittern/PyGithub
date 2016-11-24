@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -41,3 +42,6 @@ class IssueEvent(Framework.TestCase):
         self.assertEqual(self.event.id, 16348656)
         self.assertEqual(self.event.issue.number, 30)
         self.assertEqual(self.event.url, "https://api.github.com/repos/jacquev6/PyGithub/issues/events/16348656")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.event.__repr__(), 'IssueEvent(id=16348656)')

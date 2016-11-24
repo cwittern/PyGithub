@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -45,6 +46,9 @@ class Milestone(Framework.TestCase):
         self.assertEqual(self.milestone.title, "Version 0.4")
         self.assertEqual(self.milestone.url, "https://api.github.com/repos/jacquev6/PyGithub/milestones/1")
         self.assertEqual(self.milestone.creator.login, "jacquev6")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.milestone.__repr__(), 'Milestone(number=1)')
 
     def testEditWithMinimalParameters(self):
         self.milestone.edit("Title edited by PyGithub")

@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -63,6 +64,9 @@ class AuthenticatedUser(Framework.TestCase):
         self.assertEqual(self.user.total_private_repos, 5)
         self.assertEqual(self.user.type, "User")
         self.assertEqual(self.user.url, "https://api.github.com/users/jacquev6")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.user.__repr__(), 'AuthenticatedUser(login="jacquev6")')
 
     def testEditWithoutArguments(self):
         self.user.edit()

@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -60,6 +61,9 @@ class Organization(Framework.TestCase):
         self.assertEqual(self.org.total_private_repos, 0)
         self.assertEqual(self.org.type, "Organization")
         self.assertEqual(self.org.url, "https://api.github.com/orgs/BeaverSoftware")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.org.__repr__(), 'Organization(name=None, id=1424031)')
 
     def testEditWithoutArguments(self):
         self.org.edit()

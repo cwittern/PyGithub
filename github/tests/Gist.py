@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -64,6 +65,9 @@ class Gist(Framework.TestCase):
         self.assertEqual(gist.git_push_url, "https://gist.github.com/6296732.git")
         self.assertEqual(gist.html_url, "https://gist.github.com/6296732")
         self.assertEqual(gist.url, "https://api.github.com/gists/6296732")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(gist.__repr__(), 'Gist(id="6296732")')
 
     def testEditWithoutParameters(self):
         gist = self.g.get_gist("2729810")

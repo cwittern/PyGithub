@@ -6,7 +6,8 @@
 # Copyright 2012 Zearin <zearin@gonk.net>                                      #
 # Copyright 2013 Vincent Jacques <vincent@vincent-jacques.net>                 #
 #                                                                              #
-# This file is part of PyGithub. http://jacquev6.github.com/PyGithub/          #
+# This file is part of PyGithub.                                               #
+# http://pygithub.github.io/PyGithub/v1/index.html                             #
 #                                                                              #
 # PyGithub is free software: you can redistribute it and/or modify it under    #
 # the terms of the GNU Lesser General Public License as published by the Free  #
@@ -42,3 +43,6 @@ class Event(Framework.TestCase):
         self.assertTrue(self.event.public)
         self.assertEqual(self.event.repo.name, "jacquev6/PyGithub")
         self.assertEqual(self.event.type, "PushEvent")
+
+        # test __repr__() based on this attributes
+        self.assertEqual(self.event.__repr__(), 'Event(type="PushEvent", id="1556114751")')
